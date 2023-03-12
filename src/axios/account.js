@@ -1,7 +1,8 @@
-import service from 'request.js'
+import service from './request.js'
 
 const url={
-    login:'/login',
+    login:'api/user/login',
+    register:'api/user/register'
 }
 
 export class Account{
@@ -18,6 +19,16 @@ export class Account{
                 username: data.get('username'),
                 password: data.get('password')
             }
+        })
+    }
+    static async Register(data){
+        return service(url.register, {
+            method: 'post',
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            responseType: 'json',
+            data: data
         })
     }
 }
