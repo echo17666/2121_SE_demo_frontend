@@ -1,8 +1,8 @@
 import service from './request.js'
 
 const url={
-    login:'api/user/login',
-    register:'api/user/register'
+    login:'user/login',
+    register:'user/register'
 }
 
 export class Account{
